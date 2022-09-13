@@ -12,13 +12,54 @@
     </head>
 
     <body>
+        <header>
         <h1>Hello World</h1>
 
         <p>Welcome to my first webpage!</p>
 
-        <hr>
+        <!--The aside means it doesnt have as much meaning as the rest of the page. The detail/summary section could act like a quiz or (more commonly?) perhaps like a FAQ's page with a question and then expand for the answer-->
 
-        <nav>
+        <aside>
+            <details>
+                <summary>
+                    Guess <mark>how long</mark> coding this webpage took me.
+                </summary>
+                <table>
+                    <caption>How long this webpage took me</caption>
+                    <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th scope="col">Amount</th>
+                        <!--'rowspan=' would have the same funtion but for rows-->
+                        <th scope="col">Activity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Videos</th>
+                        <td>11</td>
+                        <td>David Gray beginner HTML series on YouTube</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Months</th>
+                        <td>2</td> 
+                        <td>Part time due to military duties</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">And it was a great experience and absolutely worth it!</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </details>
+        </aside>
+
+        <figure>
+            <img src="img/html5.png" alt="html5">
+        </figure>
+
+        <nav aria-label="Primary Navigation">
             <ul>
                 <li>
                     <a href="#Japan">Japan</a>
@@ -27,51 +68,81 @@
                     <a href="#Visit">Cool Places</a>
                 </li>
                 <li>
-                    <a href="#Musts">Must-See's</a>
+                    <a href="#Must-Sees">Must-Sees</a>
+                </li>
+                <li>
+                    <a href="#Contact">Contact Me</a>
                 </li>
             </ul>
         </nav>
+        </header>
 
     <hr>
 
     <hr>
-
+        <main>
         <h2>Coming to You From Japan</h2>
+        <figure>
+            <figcaption><u>Coding Greeting</u></figcaption>
+            <p>
+                <code>&lt;h1&gt;Hello World&lt;h1&gt;</code>
+            </p>
+        </figure>
 
     <hr>
 
-    <section id="Japan">
-        <h3>Why I Love Japan</h3>
-        <p> Japan Highlights So Far:</p>
-        <ol>
+    <article id="Japan">
+    <h2>Why I Love Japan</h2>
+    <section>
+    <h3> Japan Highlights So Far:</h3>
+    <ol>
         <li>...Food is phenomenal!</li>
         <li>...My wife is from Japan </li>
         <li>...Our first child, <i>Leo</i>, was born here!</li>
-        </ol>
+    </ol>
+    <figure>
+        <img src="img/family.jpg" alt="Pilcher Family" title="Pilcher Family" width="300" height="250">
+        <figcaption>
+            <i>The Fam</i>
+        </figcaption>
+    </figure>
     </section>
+    </article>
 
     <hr>
 
-    <section id="Visit">
-        <h3>Where Should You Visit</h3>
+    <article id="Visit">
+    <h2>Where Should You Visit</h2>
+    <section>
+    <h3>Suggestions</h3>
         <ul>
-        <li><p>Ito/Izu is a must</p></li>
-        <li><p>Also the Big Buddha is an amazing piece of culture</p>
+            <li><p>Ito/Izu is a must</p></li>
+            <li><p>Also the Big Buddha is an amazing piece of culture</p>
 
-        <address>
-        <b>Big Buddha</b><br>
-        4-chōme-2-28 Hase,<br>
-        Kamakura, Kanagawa, Japan<br>
-        248-0016
-        </address></li>
+            <address>
+            <b>Big Buddha</b><br>
+            4-chōme-2-28 Hase,<br>
+            Kamakura, Kanagawa, Japan<br>
+            248-0016
+            </address></li>
         </ul>
+        <figure>
+            <img src="img/big_buddha.jpg" alt="Big Buddha" width="300" height="400" title="Family visit to Big Buddha in Kamakura" loading="lazy">
+            <figcaption>
+                <i>Big Buddha</i>
+            </figcaption>
+
+        </figure>
     </section>
+    </article>
 
     <hr>
 
-    <section id="Must-Sees">
-        <h3>Historical Must-Sees</h3>
-        <dl>
+    <article id="Must-Sees">
+    <h2>Historical Must-Sees</h2>
+    <section>
+    <h3>Historic Places</h3>
+    <dl>
         <dt>Kyoto</dt>
         <dd>former capital of Japan</dd>
 
@@ -83,14 +154,135 @@
 
         <dt>Hiroshima</dt>
         <dd>Historical siginificance, <em>Especially if you are American</em></dd>
-        </dl>
+    </dl>
+    <figure>
+        <img src="img/kyoto.jpg" alt="Famous Kyoto Bamboo Forest" width="300" height="400" title="Engagemen Photo with Wifey in Kyoto's famous Bamboo Forest" loading="lazy">
+        <figcaption>
+            <i>Engagement Photo in Kyoto</i>
+        </figcaption>
+    </figure>
     </section>
+    </article>
 
     <hr>
 
-    &lt;&lt;&lt; &copy;<a href="about.html" target="_blank">Kevin Pilcher</a> &gt;&gt;&gt;
-    <p><a href="#">Back to Top</a></p>
+    <article id="Contact">
+        <h2>Contact Me</h2>
+        <p>I would love to hear any feedback you might have!</p>
 
+        <form action="https://httpbin.org/get" method="get">
+            <fieldset>
+                <legend>Personal Info</legend>
+            <p>
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="John" autocomplete="on" required autofocus>
+            </p>
+            <p>
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Doe" autocomplete="on" required>
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </p>
+            <p>
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="phone" placeholder="0000000000" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+            </p>
+            <p>
+                <label for="decade">Favorite Decade:</label>
+                <input type="number" name="decade" id="decade" min="1950" max="2022" step="10" value="1984">
+            </p>
+            <!-- <p>
+            <label for="coffee">Favorite Coffee:<label>
+            <select name="coffee" id="coffee" multiple size="5">
+                <optgroup label="Coffees">
+                    <option value="regular coffee">Regular Coffee</option>
+                    <option value="iced coffee">Iced Coffee</option>
+                </optgroup>
+                <optgroup label="Espresso Drinks">
+                    <option value="latte" selected>Latte</option>
+                    <option value="cappucino">Cappucino</option>
+                    <option value="cortado">Cortado</option>
+                    <option value="americano">Americano</option>
+                </optgroup>
+                <option value="other">Other</option>
+            </select>
+            </p> -->
+            <p>
+                <label for="coffee">Favorite Coffee:</label>
+                <input type="text" name="coffee" id="coffee" list="coffee-list">
+                <datalist id="coffee-list">
+                        <option value="coffee">                   
+                        <option value="latte">
+                        <option value="cappucino">
+                        <option value="cortado">
+                        <option value="americano">
+                        <option value="other">
+                </datalist>
+            </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>What is your favorite food?</legend>
+                <p>
+                    <input type="radio" name="food" id="ramen" value="ramen">
+                    <label for="ramen">Ramen</label>
+                </p>
+                <p>
+                    <input type="radio" name="food" id="gyoza" value="gyoza">
+                    <label for="gyoza">Gyoza</label>
+                </p>
+                <p>
+                    <input type="radio" name="food" id="other" value="otherq">
+                    <label for="other">Other</label>
+                </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Do you have pets?</legend>
+                <p>
+                    <input type="checkbox" name="pets" id="dog" value="dog">
+                    <label for="dog">Dog</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="pets" id="cat" value="cat">
+                    <label for="cat">Cat</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="pets" id="otherPet" value="other">
+                    <label for="other">Other</label>
+                </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Send Me A Note</legend>
+                <label for="message">Your Message</label>
+                <br>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Type Here"></textarea>
+            </fieldset>
+            <br>
+            <button type="submit">Submit</button>
+            <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button>
+            <!--a 'get' request like with the "Submit" will post all the information input into the URL including sensitive information so a "post" is better-->
+            <button type="reset">Reset</button>
+        </form>
+    </article>
+    </main>
+
+    <footer>
+    <p>
+        &lt;&lt;&lt; &copy;<a href="about.html" target="_blank">Kevin Pilcher</a> &gt;&gt;&gt;
+    </p>
+    <p>
+        <a href="#">Back to Top</a>
+    </p>
+
+    </footer>
     </body>
 
 </html>
+
+<!--Look more into time/datetime element/attribute-->
+
+<!--Avoid div/span tags as they have zero semantic meaning, can be used in the super rare case where NOTHING else fits or for CSS-->
